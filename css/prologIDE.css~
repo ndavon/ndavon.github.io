@@ -1,0 +1,4 @@
+.mitarbeiter {
+    text-align: center;
+    margin-buttom: 20px;
+}

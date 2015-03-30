@@ -1,0 +1,13 @@
+.mitarbeiter {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.mitarbeiter h2 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.usecase tr td{
+
+}

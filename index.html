@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>PrologIDE - Team Lambda</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/blog.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/prologIDE.css" rel="stylesheet">
+    
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-fixed-top">
+      <div class="blog-masthead">
+	<div class="container">
+	  <nav class="blog-nav">
+	    <a class="blog-nav-item active" href="#">Home</a>
+	    <a class="blog-nav-item" href="#Vision">Vision</a>
+	    <a class="blog-nav-item" href="#Anforderungen">Anforderungen</a>
+	    <a class="blog-nav-item" href="#Funktionalität">Anforderungsanalyse</a>
+	    <a class="blog-nav-item" href="#Projektplanung">Projektplanung</a>
+	    <a class="blog-nav-item" href="#TechnischerAufbau">Technischer Aufbau</a>
+	    <a class="blog-nav-item" href="#Fazit">Fazit</a>
+	  </nav>
+	</div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="blog-header">
+	<h1 class="blog-title">PrologIDE</h1>
+	<p class="lead blog-description">The brand new IDE for professional Prolog development.</p>
+      </div>
+
+      <div class="row">
+
+	<div class="col-sm-8 blog-main">
+	  
+	  <div class="blog-post">
+	    <h2 class="blog-post-title" id="Vision">Vision</h2>
+
+	    <p>In moderner Softwareentwicklung ist der umfangreiche Einsatz von Tools längst Standard. Tools helfen dem Entwickler zu mehr Produktivität,
+	      mehr Qualität und entlasten ihn von langweiligen und eintönigen Aufgaben. Der Kern einer jeden Tool-Strategie für ihr Unternehmen ist dabei die
+	      IDE. Sie ist das zentrale Tool um Software zu entwickeln und übernimmt die fundamentalsten Aufgaben.</p>
+
+	    <p>Doch in Prolog ist eine zeitgemäße IDE nicht verfügbar gewesen. Bis zur Geburt dieses Projekts das Prolog ins 21. Jahrhundert befördert und
+	      einen produktiven und professionellen Umgang mit der Sprache erlaubt.</p>
+	  </div><!-- /.blog-post -->
+
+	  <div class="blog-post">
+	    <h2 class="blog-post-title" id="Anforderungen">Anforderungen</h2>
+	    
+	    <p> Anforderungen an das Projekt:</p>
+
+	    <ul>
+	      <li>
+		<p class="requirements">Text Highlighting</p>
+		<p>Direkt bei der Eingabe sollen Code Wörter der Prolog Sprache hervorgehoben werden und Strukturen übersichtlicher dargestellt werden.
+		  Damit können Entwickler schnell Syntaxfehler und Inhalt des Codes erfassen.
+		  </p>
+	      </li>
+	      <li>
+		<p class="requirements">Code Analyse</p>
+		<p>Syntax und Semantik des Programmes soll fortlaufend untersucht werden und Fehlermeldungen frühzeitig und übersichtlich an den User
+		zurück gegeben werden.</p>
+	      </li>
+	      <li>
+		<p class="requirements">Compilierung</p>
+		<p>Die IDE soll eine schnelle und simple Compilier-Methode anbieten. Der User soll über einen Button die komplette Compilierung starten
+		und ablaufen lassen. Die IDE soll dabei die Projektabhängigkeiten verwalten und auflösen.</p>
+	      </li>
+	      <li>
+		<p class="requirements">Debuggingunterstützung</p>
+		<p>Eine gute Unterstützung der Prolog-Debuggers soll fester Bestandteil der IDE sein. Dabei soll der User übersichtlich durch den Quellcode
+		navigiert werden und ihm durch anzeigen von aktuellen Werten in der Suche nach Fehlern unterstützen.</p>
+	      </li>
+	      <li>
+		<p class="requirements">Projektmanagement</p>
+		<p>Mit der IDE soll ein großer Teil der Projektorganisation übernommen werden und der Entwickler somit von dieser Tätigkeit entlastet werden.
+		Vor dem User soll die Komplexität und die Abhängigkeiten des Projekts versteckt werden und transparent gespeichert werden.</p>
+	      </li>
+	      <li>
+		<p class="requirements">Einfache Integration von Versionierungssystemen</p>
+		<p>Die IDE soll unterschiedliche Versionierungssysteme, wie zum Beispiel Git und Subversion, einbinden und mit übernehmen. Projekte sollen
+		direkt aus Repositories geladen und rückgespeichert werden können.</p>
+	      </li>
+	    </ul>
+	    
+	  </div><!-- /.blog-post -->
+	  
+	  <div class="blog-post">
+	    <h2 class="blog-post-title" id="Funktionalität">Anforderungsanalyse</h2>
+
+	    <p> Die oben formulierten Anforderungen wurden während des Projekt analysiert und ein System aufgebaut in dem die Abhängigkeiten der einzelnen
+	    Punkte in klarem Zusammenhang steht. Daraus ergibt sich das folgende UseCase Diagramm:</p>
+
+	    
+            <img src="images/useCase.jpg" alt="Generic placeholder image" width="100%">
+
+	    <p>Dieser grobe Überblick über die definierten UseCases kann beliebig verfeinert werden. Besonders die Ausformulierung der UseCases kann dabei
+	      unterschiedlich umfangreich sein. Zwei der wichtigsten UseCases sind hier präsentiert.</p> 
+ 
+            <p>Der UseCase für die Compilierung des Projektes ist einer der wichtigsten UseCases, da er eine Grundfunktionalität einschliesst und auch
+	    in dem sehr wichtigen Debugging UseCase Anwendung findet:</p>
+
+	    <!-- This is the Container for Use Cases -->
+	    <div>
+	      <table class="table table-striped table-bordered usecase">
+		<tbody>
+		  <tr>
+		    <td colspan="2">Use Case Nr</td>
+		    <td colspan="2">2</td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Use Case Name</td>
+		    <td colspan="2">Compile Project</td>
+		  </tr>
+		  <tr>
+		    <td>Created By</td>
+		    <td>Maximilian Probst</td>
+		    <td style="font-weight:bold">Last Updated By</td>
+		    <td>Maximilian Probst</td>
+		  </tr>
+		  <tr>
+		    <td>Date created</td>
+		    <td>03.03.2015</td>
+		    <td style="font-weight:bold">Last Updated</td>
+		    <td>03.03.2015</td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Actor</td>
+		    <td colspan="2">User</td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Description</td>
+		    <td colspan="2">The project gets compiled into an executable program.</td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Preconditions</td>
+		    <td colspan="2">Application is started, Project is loaded</td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Postconditions</td>
+		    <td colspan="2"></td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Priority</td>
+		    <td colspan="2">High</td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Frequency of Use</td>
+		    <td colspan="2">Often</td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Normal Course of Events</td>
+		    <td colspan="2">Files are saved, compiler settings are parsed, compilation is invoked, the new binary is executed</td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Alternative Events</td>
+		    <td colspan="2"></td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Exceptions</td>
+		    <td colspan="2">No correct input -> Return errors generated by the compiler</td>
+</tr>
+<tr>
+  <td colspan="2">Includes</td>
+  <td colspan="2">Read Compiler Options, Run application</td>
+</tr>
+<tr>
+  <td colspan="2">Special Requirements</td>
+  <td colspan="2"></td>
+</tr>
+<tr> 
+  <td colspan="2">Assumptions</td>
+  <td colspan="2">Correct Code</td>
+</tr>
+<tr>
+  <td colspan="2">Notes and Issues</td>
+  <td colspan="2"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p> Der zweite UseCase beschreibt das Laden eines Projekts. </p>
+</div>
+  
+	    <!-- This is the Container for Use Cases -->
+	    <div>
+	      <table class="table table-striped table-bordered usecase">
+		<tbody>
+		  <tr>
+		    <td colspan="2">Use Case Nr</td>
+		    <td colspan="2">5</td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Use Case Name</td>
+		    <td colspan="2">Project Loading</td>
+		  </tr>
+		  <tr>
+		    <td>Created By</td>
+		    <td>Maximilian Probst</td>
+		    <td style="font-weight:bold">Last Updated By</td>
+		    <td>Maximilian Probst</td>
+		  </tr>
+		  <tr>
+		    <td>Date created</td>
+		    <td>03.03.2015</td>
+		    <td style="font-weight:bold">Last Updated</td>
+		    <td>03.03.2015</td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Actor</td>
+		    <td colspan="2">User</td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Description</td>
+		    <td colspan="2">A project is loaded in the workspace of the PrologIDE</td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Preconditions</td>
+		    <td colspan="2">Application is started, Project files are in the correct format</td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Postconditions</td>
+		    <td colspan="2">Project is loaded and all possibilities to work on the project are enabled</td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Priority</td>
+		    <td colspan="2">High</td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Frequency of Use</td>
+		    <td colspan="2">Sometimes</td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Normal Course of Events</td>
+		    <td colspan="2"></td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Alternative Events</td>
+		    <td colspan="2"></td>
+		  </tr>
+		  <tr>
+		    <td colspan="2">Exceptions</td>
+		    <td colspan="2">Incorrect file format of the project file. Corrupted files.</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Includes</td>
+                    <td colspan="2"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Special Requirements</td>
+                    <td colspan="2"></td>
+                  </tr>
+                  <tr> 
+                    <td colspan="2">Assumptions</td>
+                    <td colspan="2"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Notes and Issues</td>
+                    <td colspan="2">The concrete implementation could take the project from a server.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+	    
+	  <!-- /.blog-post -->
+	  
+	  <div class="blog-post">
+	    <h2 class="blog-post-title" id="Projektplanung">Projektplanung - Ziele und Vorgehensweisen</h2>
+
+	    <p>Nach der ausführlichen Analyse der Anforderungen, Wünschen und bestehenden Lösungen wurde ein Projektplan eingeführt.
+	      Dabei wurde eine inkrementelle Projektvorgehensmethode gewählt. Das heißt stückweise sollen immer neue Parts der Application
+	      eingeführt werden und somit durch jedes Inkrement eine Erweiterung der bestehenden Applikation vorgenommen werden. Dabei soll
+	      die Balance gehalten werden zwischen der schnellen Belieferung des Kunden und der größtmöglichen Qualität der Software. Als
+	      Zeitraum zwischen den Releases sollen circa 2 Wochen liegen. </p>
+
+	    <p>Aus diesen Überlegungen wurden die Anforderungen in Packets gebündelt und die folgenden Milestones definiert:</p>
+
+	    <table class="table">
+	      <tbody>
+		<tr>
+		  <td>17.03.2015</td><td>Erste Kundenpräsentation: Vorstellung einer IDE die die Kompilierung und Text Highlighting unterstützt</td>
+		</tr>
+		<tr>
+		  <td>31.03.2015</td><td>Zweite Kundenpräsentation und Alpha-Auslieferung: Vorstellung des Debugginginterfaces und der Code Analyse in einer Live-Demo</td>
+		</tr>
+		<tr>
+		  <td>14.04.2015</td><td>Release der Beta-Version</td>
+		</tr>
+		<tr>
+		  <td>21.04.2015</td><td>Finales Release</td>
+		</tr>
+	      </tbody>
+	    </table>
+	      
+	    <p>Daraus ergibt sich ein konkreter Zeitplan der in dem untenstehenden Bild gut nachvollzogen werden kann.</p>
+
+	    <img src="images/Projektplan_LambdaIDE.png" alt="Generic placeholder image" width="100%">
+
+	  </div><!-- /.blog-post -->
+
+	  <div class="blog-post">
+	    <h2 class="blog-post-title" id="TechnischerAufbau">Technischer Aufbau der Applikation</h2>
+	    <p>cdsds  </p>
+	    <img src="images/klassendiagramm.png" alt="Generic placeholder image" width="100%">
+
+	  </div><!-- /.blog-post -->
+	  
+	  <div class="blog-post">
+	    <h2 class="blog-post-title" id="Fazit">Fazit</h2>
+	    <p>Mockup Bilder und Resume</p>
+	  </div><!-- /.blog-post -->
+
+
+        </div><!-- /.blog-main -->
+
+	<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+	  <div class="sidebar-module sidebar-module-inset">
+	    <h4 >Projekt Team Lambda - Die Entwickler hinter der IDE</h4>
+
+	    <div class="mitarbeiter" style="text-align:left">
+	      <p>Team Lambda ist die Produktionsstätte der PrologIDE. Die kleine Firma arbeitet auf neustem Stand der Methoden und führt
+	         inkrementelle Projekte durch, die Entwickler in ihrer alltäglichen Arbeit unterstützen und zur Produktivität beitragen.</p>
+	      <hr>
+	    </div>
+	    
+            <div class="mitarbeiter">
+              <img class="img-circle" src="images/flanders.jpg" alt="Generic placeholder image" width="140" height="140">
+              <h2>Nicolai Davidsson</h2>
+              <p>Projektleiter und Software Developer</p>
+	    </div>    
+
+	    <div class="mitarbeiter">
+              <img class="img-circle" src="images/Mitarbeiter.jpg" alt="Generic placeholder image" width="140" height="140">
+              <h2>Maximilian Probst</h2>
+              <p>Dokumentation und Marketing</p>
+	    </div>
+
+	    <div class="mitarbeiter" >
+              <img class="img-circle" src="images/bart.png" alt="Generic placeholder image" width="140" height="140">
+              <h2>Moritz Scherzinger</h2>
+              <p>Software Developer</p>
+	    </div>    
+	 
+	    <div class="mitarbeiter">
+              <img class="img-circle" src="images/abraham.gif" alt="Generic placeholder image" width="140" height="140">
+              <h2>Benedikt Jung</h2>
+              <p>Projektleiter und Software Developer</p>
+	    </div>    
+	 
+	    <div class="mitarbeiter">
+              <img class="img-circle" src="images/tingeltangel.gif" alt="Generic placeholder image" width="140" height="140">
+              <h2>Lukas Wuesteney</h2>
+              <p>Projektleiter und Software Developer</p>
+	    </div>    
+
+	  </div>
+	</div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p>
+	<a href="#">Back to top</a>
+      </p>
+    </footer>
+
+        <!-- Bootstrap core JavaScript
+	     ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="../../dist/js/bootstrap.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+  </html>
