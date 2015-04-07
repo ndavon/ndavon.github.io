@@ -81,6 +81,11 @@
 
 	    <ul>
 	      <li>
+		<p class="requirements">Plattform-Agnostik</p>
+		<p>Prolog ist eine Sprache die sich nicht auf eine bestimmte Plattform festlegt, sondern auf jedem Betriebssystem brilliert. Deshalb soll
+		auch die IDE auf den drei populärsten Plattformen - Windows, Linux und Mac - laufen.</p>
+	      </li>
+	      <li>
 		<p class="requirements">Text Highlighting</p>
 		<p>Direkt bei der Eingabe sollen Code Wörter der Prolog Sprache hervorgehoben werden und Strukturen übersichtlicher dargestellt werden.
 		  Damit können Entwickler schnell Syntaxfehler und Inhalt des Codes erfassen.
@@ -331,15 +336,34 @@
 
 	  <div class="blog-post">
 	    <h2 class="blog-post-title" id="TechnischerAufbau">Technischer Aufbau der Applikation</h2>
-	    <p>cdsds  </p>
-	    <img src="images/klassendiagramm.png" alt="Generic placeholder image" width="100%">
+	    <p>Bei der technischen Umsetzung der Applikation wurde versucht die Anforderungsanalyse konsequent weiterzuführen
+	      und zu verfeinern. Dies ist besonders gut im UML-Klassendiagramm zu erkennen. </p>
+
+	    <p> Besonders gut sind in diesem Fall auch die grundlegenden Abstraktionspatterns zu sehen. Ein klassisches Beispiel
+	      für die Anwendung von OOP-Methoden ist an dem Beispiel der abstrakten Klasse "Shortcuts" zu sehen. Sie wird von
+	      zahlreichen Klassen implementiert die Methoden von ihr erben. Um das UML-Diagramm sauber zu halten wurde hierbei auf die
+	      Auflistung der Methoden verzichtet. Es ist aber deutlich zu sehen das im Falle einer Tastenkombination in der Appliktion die
+	      konkrete Klasse aufgerufen werden kann, die dann evaluiert welche Aktionen ausgeführt werden sollen. Damit ist sicher gestellt
+	      das jeder Programmierer seine Vorlieben in der IDE ausleben kann.</p>
+
+	    <img src="images/klassendiagramm.png" alt="UML-class diagram" width="100%">
+
+	    <p>Bei der Programmierung wird dabei auf die Sprache C++ gesetzt die sehr gut für unterschiedliche Plattformen geschrieben
+	      werden kann. Um die GUI zu modelieren wird auf das Qt-Framework gesetzt, dass graphische Komponenten plattformunabhängig
+	      bereitstellt. Durch die Wahl dieser Kombination konnte weitesgehend derselbe Code für alle Plattformen verwendet werden.
+	    </p>
 
 	  </div><!-- /.blog-post -->
 	  
 	  <div class="blog-post">
 	    <h2 class="blog-post-title" id="Fazit">Fazit</h2>
-	    <p>Mockup Bilder und Resume</p>
+	    <p>Die Application wurde streng nach Projektplan entwickelt und von den Entwicklern in der vorgesehen Zeit fertiggestellt.
+	      Alle Milestones konnten gehalten werden und nach einigen Nachbesserungen wurde das Projekt endgültig ausgeliefert.</p>
 
+	    <p>Die umfangreichen Anforderungen konnten alle beachtet werden und sind ohne Einschränkungen auf allen Plattformen benutzbar.
+	      Die untenstehenden Screenshots vermitteln dabei einen ersten Eindruck über die Mächtigkeit der neuen Programmierumgebung.
+	    </p>
+	    
 	    <!-- Carousel
 		 ================================================== -->
 	    <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -348,28 +372,67 @@
 		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 		<li data-target="#myCarousel" data-slide-to="1"></li>
 		<li data-target="#myCarousel" data-slide-to="2"></li>
+		<li data-target="#myCarousel" data-slide-to="3"></li>
+		<li data-target="#myCarousel" data-slide-to="4"></li>
+		<li data-target="#myCarousel" data-slide-to="5"></li>
+		<li data-target="#myCarousel" data-slide-to="6"></li>
 	      </ol>
 	      <div class="carousel-inner" role="listbox">
 		<div class="item active">
 		  <img src="images/mockups/01.png" alt="The Graphical User Interface of the PrologIDE">
+		  <div class="container">
+		    <div class="carousel-caption">
+		      <h1>Graphical User Interface</h1>
+		    </div>
+		  </div>
 		</div>
 		<div class="item">
 		  <img src="images/mockups/02.png" alt="Project Settings Tab">
+		  <div class="container">
+		    <div class="carousel-caption">
+		      <h1>Projekt Settings und Optionen</h1>
+		    </div>
+		  </div>
 		</div>
 		<div class="item">
 		  <img src="images/mockups/03.png" alt="Edit Tab">
+		  <div class="container">
+		    <div class="carousel-caption">
+		      <h1>Edit-Funktionen nur einen Klick entfernt</h1>
+		    </div>
+		  </div>
 		</div>
 		<div class="item">
 		  <img src="images/mockups/04.png" alt="Compiler Options and Settings">
+		  <div class="container">
+		    <div class="carousel-caption">
+		      <h1>Automatische, komfortable Compilation</h1>
+		    </div>
+		  </div>
 		</div>
 		<div class="item">
 		  <img src="images/mockups/05.png" alt="Debugging Tab">
+		  <div class="container">
+		    <div class="carousel-caption">
+		      <h1>Effektives und übersichtliches Debugging</h1>
+		    </div>
+		  </div>
 		</div>
 		<div class="item">
 		  <img src="images/mockups/06.png" alt="Settings Tab">
+		  <div class="container">
+		    <div class="carousel-caption">
+		      <h1>Settings und Tutorials für einen schnellen Einstieg</h1>
+		    </div>
+		  </div>
 		</div>
 		<div class="item">
 		  <img src="images/mockups/07.png" alt="Setting Window">
+		  <div class="container">
+		    <div class="carousel-caption">
+		      <h1>Alle Projekteinstellungen in einem Fenster</h1>
+		    </div>
+		  </div>
 		</div>
 	      </div>
 	      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -382,8 +445,11 @@
 	      </a>
 	    </div><!-- /.carousel -->
 
+	    <p> Besonders die Konzentration auf Einfachheit und Funktionalität wird dabei offensichtlich, die dem Prolog Developer helfen
+	      sollen sich auf seine Arbeit zu fokusieren. Durch die Kategorisierung die schon im ersten Funktionalen Entwurf vorgenommen wurde,
+	      werden die diversen Feature übersichtlich getrennt und präsentiert.</p>
+    
 	  </div><!-- /.blog-post -->
-
 
         </div><!-- /.blog-main -->
 
@@ -418,13 +484,13 @@
 	    <div class="mitarbeiter">
               <img class="img-circle" src="images/abraham.gif" alt="Generic placeholder image" width="140" height="140">
               <h2>Benedikt Jung</h2>
-              <p>Projektleiter und Software Developer</p>
+              <p>Software Developer</p>
 	    </div>    
 	 
 	    <div class="mitarbeiter">
               <img class="img-circle" src="images/tingeltangel.gif" alt="Generic placeholder image" width="140" height="140">
               <h2>Lukas Wuesteney</h2>
-              <p>Projektleiter und Software Developer</p>
+              <p>Testing</p>
 	    </div>    
 
 	  </div>
@@ -445,7 +511,7 @@
 	     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="../../dist/js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
