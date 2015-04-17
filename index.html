@@ -23,11 +23,14 @@
     <!-- Caroussel style -->
     <link href="carousel.css" rel="stylesheet">
 
+    <!-- Full screen images -->
+    <link rel="stylesheet" href="css/jquery-fullsizable.css">
+    
   </head>
 
   <body>
 
-    <nav class="navbar navbar-fixed-top">
+    <nav class="navbar">
       <div class="blog-masthead">
 	<div class="container">
 	  <nav class="blog-nav">
@@ -118,8 +121,9 @@
 	    <p> Die oben formulierten Anforderungen wurden während des Projekt analysiert und ein System aufgebaut in dem die Abhängigkeiten der einzelnen
 	    Punkte in klarem Zusammenhang steht. Daraus ergibt sich das folgende UseCase Diagramm:</p>
 
-	    
-            <img src="images/useCase.jpg" alt="Generic placeholder image" width="100%">
+	    <a class="fullsizable" id="fullsized_fullscreen" href="images/useCase.jpg" title="Architektur">
+              <img src="images/useCase.jpg" alt="Generic placeholder image" width="100%">
+	    </a>
 
 	    <p>Dieser grobe Überblick über die definierten UseCases kann beliebig verfeinert werden. Besonders die Ausformulierung der UseCases kann dabei
 	      unterschiedlich umfangreich sein. Zwei der wichtigsten UseCases sind hier präsentiert.</p> 
@@ -321,8 +325,9 @@
 	    </table>
 	      
 	    <p>Daraus ergibt sich ein konkreter Zeitplan der in dem untenstehenden Bild gut nachvollzogen werden kann.</p>
-
-	    <img src="images/Projektplan_LambdaIDE.png" alt="Generic placeholder image" width="100%">
+	    <a class="fullsizable" id="fullsized_fullscreen" href="images/Projektplan_LambdaIDE.png" title="Architektur">
+	      <img src="images/Projektplan_LambdaIDE.png" alt="Generic placeholder image" width="100%">
+	    </a>
 
 	  </div><!-- /.blog-post -->
 
@@ -347,7 +352,10 @@
 
 	      Aus den genannten Gründen und Anforderungen wird eine Fat Client Architektur wie folgt umgesetzt:
 	    </p>
-	      <img src="images/Architecture.png" alt="Architektur der Applikation" width="100%">
+	    
+	      <a class="fullsizable" id="fullsized_fullscreen" href="images/Architecture.png" title="Architektur">
+	        <img src="images/Architecture.png" alt="Architektur der Applikation" width="100%">
+	      </a>
 	    <p>
 	      Eine serverseitige Umsetzung der Businesslogik scheidet aus, um die Offline-Entwicklung von Prolog-Code zu ermöglichen.
 	      Auch ohne diese Anforderung wäre aufgrund der stark schwankenden Benutzeranzahl und der hohen Rechenlast durch die Live-Compilierung eine Businesslogik auf Serverseite unwirtschaftlich.
@@ -369,11 +377,22 @@
 	      Auflistung der Methoden verzichtet. Es ist aber deutlich zu sehen das im Falle einer Tastenkombination in der Appliktion die
 	      konkrete Klasse aufgerufen werden kann, die dann evaluiert welche Aktionen ausgeführt werden sollen. Damit ist sicher gestellt
 	      das jeder Programmierer seine Vorlieben in der IDE ausleben kann.</p>
+	    <a class="fullsizable" id="fullsized_fullscreen" href="images/klassendiagramm.png" title="Architektur">
+	      <img src="images/klassendiagramm.png" alt="UML-class diagram" width="100%">
+	    </a>
 
-	    <img src="images/klassendiagramm.png" alt="UML-class diagram" width="100%">
-
-	    <p>Bei der Programmierung wird dabei auf die Sprache C++ gesetzt die sehr gut für unterschiedliche Plattformen geschrieben
-	      werden kann. Um die GUI zu modelieren wird auf das Qt-Framework gesetzt, dass graphische Komponenten plattformunabhängig
+	    <p>Für eine klare Struktur und eine leichte Erweiterung wurden an verschiedenen Stellen Design Patterns eingesetzt.
+		  So wird zum Beispiel eine Undo Funktion durch das Command pattern realisiert. Jede Aktion in einem File,
+		  egal ob cut, paste, write oder delete, wird dem CommandManager mitgeteilt. Mithilfe seines Befehls Stacks können vorhergehende
+		  Aktionen Rückgängig gemacht werden. In den Einstellungen gibt es die Option Compiler und Debugger zu wählen. Anhand des
+		  Factory Pattern können diese von der Prolog IDE ausgewählt und verwendet werden. Anhand eines allgemeinen Creators wird der spezielle
+		  Compiler/Debugger initialisiert und steht durch eine abstrakte Methode nach außen als allgemeiner Compiler oder Debugger zur Verfügung.
+		  Zudem wurde für verschiedene GUI Designs das Strategy Pattern verwendet. Beisoielhaft wurden hier interfaces für Farb Design und Inhalts Anordnung
+		  modeliert. Es kann aber auf beliebig viele Eigenschaften und Änderungen erweitert werden. Zunächst werden verschiedene Bausteine, mithilfe von Interfaces zusammengefasst, angeboten.
+		  Einzelne Desingdefinitionen können dann ausgeführt werden (hier DesignOne, DesignTwo und DesignThree). Mithilfe des Singleton Patterns wird sichergestellt, dass die Prolog nur
+		  ein Design haben kann und nichts durcheinander kommt. Aus dem gleichen Grund wird auch bei den Einstellungen das Singleton Pattern eingesetzt.</br></br>
+		  Bei der Programmierung wird dabei auf die Sprache C++ gesetzt die sehr gut für unterschiedliche Plattformen geschrieben
+	      werden kann. Um die GUI innerhalb des Strategy Patterns zu modelieren wird auf das Qt-Framework gesetzt, dass graphische Komponenten plattformunabhängig
 	      bereitstellt. Durch die Wahl dieser Kombination konnte weitesgehend derselbe Code für alle Plattformen verwendet werden.
 	    </p>
 
@@ -572,7 +591,14 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="js/jquery.fullsizable.2.0.2.min.js"></script>
+	<script>
+	  $(function() {
+	  $('a.fullsizable').fullsizable({
+  detach_id: 'wrapper',
+  clickBehaviour: 'close'
+	  });
+	  });
+	</script>
   </body>
   </html>
